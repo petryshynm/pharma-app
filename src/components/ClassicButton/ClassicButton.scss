@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.classic-btn {
+    padding: 12px 35px;
+    background: $white;
+    border: 1px solid $white;
+    color: $jacksons-purple;
+    border-radius: 30px;
+    position: relative;
+    z-index: 3;
+    -webkit-box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
+    box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+    font-weight: 400;
+    transition: all .4s;
+    font-size: 14px;
+    &::after{
+        z-index: -3;
+        transition: all .4s;
+        content: '';
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -100%;
+        background: $jacksons-purple;
+    }
+    &:hover {
+        color: $white;
+        &::after{    
+            left: 0%;
+        }
+    }
+    &_inverted{
+        color: $white;
+        background-color: $jacksons-purple;
+        border-color: $jacksons-purple;
+        &::after{
+            background-color: $white;
+        }
+        &:hover {
+            color: $jacksons-purple;
+        }
+    }
+}

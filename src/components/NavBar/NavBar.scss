@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.navbar{
+    display: flex; 
+    >a{
+        color: $white;
+        display: block;
+        margin-left: 15px;
+        text-decoration: none;
+        transition: all 0.8s ease;
+        &:hover{
+            color: $jacksons-purple;
+        }
+        &.active{
+            color: $jacksons-purple;
+        }
+    }
+}

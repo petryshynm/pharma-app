@@ -1,0 +1,135 @@
+@import '../../styles/variables.scss';
+
+.about{
+    margin: 0 auto;
+    padding: 60px 0;
+    position: relative;
+    color: $black;
+    background: $white;
+    &__title {
+        font-size: 30px;
+        font-weight: 500;
+        font-family: 'Rubik', sans-serif;
+        text-align: center;
+        margin-bottom: 30px;
+        span {
+            color: $jacksons-purple;
+        }
+    }
+    &__subtitle {
+        max-width: 770px;
+        text-align: center;
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: $dusty-gray;
+        line-height: 1.8;
+        margin: 0 auto 80px auto;
+    } 
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__border{
+        position: absolute;
+        bottom: 50px;
+        width: 100%;
+        &::after, &::before{
+            content: '';
+            position: absolute;
+            border-bottom: 50px solid $alabaster; 	
+        }
+        &::after{
+            border-left: 30vw solid transparent;
+            right: 0;
+        }
+        &::before{
+            border-right: 70vw solid transparent;	
+        }
+    }
+
+    .card{
+        background-color: $white;
+        position: relative;
+        z-index: 4;
+        padding: 50px 30px;
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 20px 40px rgb(0 0 0 / 5%);
+        &_above{
+            z-index: 5;
+        }
+        &__title{
+            font-weight: 500;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-family: 'Rubik', sans-serif;
+        }
+        &__subtitle{
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: $dusty-gray;
+            line-height: 1.8;
+            text-align: center;
+        }
+        &__icon-container {
+            position: relative;
+            &::after{
+                position: absolute;
+                content: '';
+                display: block;
+                height: 0px;
+                width: 0px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, calc(-50% - 20px));
+                border-radius: 50%;
+                z-index: -5;
+                background: linear-gradient(to bottom right, #2576FD, #1A237E);
+                transition: all 0.4s ease;
+            }
+            &:hover {
+                &::after{
+                    height: 100px;
+                    width: 100px;
+                }
+                .card__icon path {
+                    fill: $white;
+                }
+            }
+        }
+        &__icon{
+            margin-bottom: 40px;
+            height: 60px;
+            path {
+                fill: $dusty-gray;
+                transition: all 0.7s ease;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        &__cards {
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        max-width: 540px;
+    }
+
+    @media screen and (max-width: 575px) {
+        max-width: 100%;
+    }
+}
+

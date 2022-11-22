@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.modal {
+    cursor: pointer;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content{
+        width: 1000px;
+    }
+    &__close {
+        cursor: pointer;
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        height: 30px;
+        width: 30px;
+        font-size: 19px;
+        border: $white;
+        color: $white;
+        border-radius: 5px;
+        background: $black;
+    }
+    @media screen and (max-width: 1199px) {
+        &__content{
+            width: 800px;
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        &__content{
+            width: 600px;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        &__content{
+            width: 100%;
+        }
+    }
+
+}

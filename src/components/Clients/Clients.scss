@@ -1,0 +1,117 @@
+@import '../../styles/variables.scss';
+
+.clients {
+    color: $white;
+    padding: 50px 0;
+    position: relative;
+    background-image: url('../../');
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &::before {
+        content: "";
+        display: block;
+        top: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.7;
+        background: linear-gradient(to bottom right, $jacksons-purple, $dodger-blue);
+    }
+    .container {
+        position: relative;
+    }
+    &__heading{
+        margin-bottom: 80px;
+        text-align: center;
+    }
+    &__title{
+        font-family: 'Rubik', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 15px;
+        span {
+            font-weight: 500;
+        }
+    }
+    &__subtitle{
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        color: $silver;
+    }
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__card {
+        width: 270px;
+        &:nth-child(2n){
+            margin-top: 30px;
+        }
+        .card {
+            &__icon {
+                margin: 0 auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                width: 80px;
+                height: 80px;
+                line-height: 85px;
+                border-radius: 50%;
+                border: 1px dashed $gallery;
+                margin-bottom: 30px;
+            }
+            &__content {
+                background-color: $white;
+                text-align: center;
+                color: $black;
+                padding: 50px 30px;
+                box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
+                border-radius: 10px;
+                position: relative;
+                z-index: 3;
+                transition: all .3s ease;
+            }
+        }
+    }
+    &__upper-border{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+        &::before, &::after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 50px solid $alabaster;
+        }
+        &::before{
+            border-right: 30vw solid transparent;
+        }
+        &::after{
+            right: 0;
+            border-left: 70vw solid transparent;
+        }
+    }
+    &__bottom-border{
+        position: relative;
+        z-index: 5;
+        &::before, &::after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-bottom: 50px solid $white;
+        }
+        &::before{
+            border-right: 70vw solid transparent;
+        }
+        &::after{
+            right: 0;
+            border-left: 30vw solid transparent;
+        }
+    }
+}

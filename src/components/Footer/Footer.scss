@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+footer{
+    position: relative;
+    bottom: 0;
+    height: 400px;
+    width: 100%;
+    background-color: $dodger-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: white;
+}

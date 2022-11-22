@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.header {
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    color: $gallery;
+    letter-spacing: .5px;
+    font-family: 'Rubik', sans-serif;
+    .container {
+        padding: 15px 0;
+        height: 135px;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+    &__logo{
+        height: 85%;
+    }
+    &_fixed {
+        background-color: $white;
+        position: fixed;
+        animation: slideIn 0.7s ease;
+        -webkit-box-shadow: 0px 10px 40px rgb(0 0 0 / 5%);
+        box-shadow: 0px 10px 40px rgb(0 0 0 / 5%);
+        .navbar > a{
+            color: $black;
+            &:hover{
+                color: $dodger-blue;
+            }
+            &.active{
+                color: $dodger-blue;
+            }
+        }
+    }    
+}
+
+@keyframes slideIn {
+  from {
+    top: -135px; 
+  }
+
+  to {
+    top: 0;
+  }
+}
