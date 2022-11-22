@@ -1,3 +1,8 @@
+// import lamp from '../../resources/icons/pen.svg';
+// import lamp from '../../resources/icons/pen.svg';
+// import lamp from '../../resources/icons/pen.svg';
+// import lamp from '../../resources/icons/pen.svg';
+
 export const navLinks = [
     {
         label:'Home',
@@ -25,4 +30,49 @@ export const navLinks = [
     }
 ]
 
+export const clientCards = [
+    {
+        label: 'Academic Pharmaceutical companies',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Contract pharma',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Private-label',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Government organizations',
+        icon: './assets/logo.png'
+    }
+]
+
+export const servicesCards = [
+    {
+        label: 'Specialty Pharma Companies',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'R&D & Formulation Companies',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Chemical Catalog Companies',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Specialty Pharma Companies',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Chemical Catalog Companies',
+        icon: './assets/logo.png'
+    },
+    {
+        label: 'Specialty Pharma Companies',
+        icon: './assets/logo.png'
+    }
+]
 

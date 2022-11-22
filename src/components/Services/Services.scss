@@ -1,0 +1,104 @@
+@import '../../styles/variables.scss';
+
+.services {
+    color: $white;
+    padding: 50px 0;
+    position: relative;
+    background-color: $alabaster;
+    .container {
+        position: relative;
+    }
+    &__title {
+        text-align: center;
+        font-family: 'Rubik', sans-serif;
+        font-size: 30px;
+        font-weight: 300;
+        margin-bottom: 15px;
+        color: $black;
+        margin-bottom: 80px;
+        span {
+            font-weight: 500;
+        }
+    }
+    &__content-wrapper{
+        display: flex;
+        justify-content: space-between;
+        > img{
+            border-radius: 5px;
+            box-shadow: 0px 10px 30px rgb(0 0 0 / 10%);
+            width: 50%;
+        }
+    }
+    &__content{
+        p {
+            font-family: 'Raleway', sans-serif;
+            font-size: 15px;
+            font-weight: 400;
+            color: #999;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__cards{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__card {
+        width: 33.33%;
+        text-align: center;
+        padding: 30px 5px;
+        background-color: red;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        font-weight: 500;
+        font-size: 18px;
+        font-family: 'Rubik', sans-serif;
+        background-color: #f7f7f7;
+        img {
+            height: 30px;
+            width: 30px;
+            margin-bottom: 15px;
+        }
+    }
+    &__upper-border{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+        &::before, &::after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 50px solid $white;
+        }
+        &::before{
+            border-right: 30vw solid transparent;
+        }
+        &::after{
+            right: 0;
+            border-left: 70vw solid transparent;
+        }
+    }
+    &__bottom-border{
+        position: relative;
+        z-index: 5;
+        &::before, &::after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-bottom: 50px solid $white;
+        }
+        &::before{
+            border-right: 70vw solid transparent;
+        }
+        &::after{
+            right: 0;
+            border-left: 30vw solid transparent;
+        }
+    }
+}

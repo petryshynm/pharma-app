@@ -4,6 +4,7 @@ import { Home } from './components/Home';
 import { About } from './components/About';
 import { Approach } from './components/Approach';
 import { Clients } from './components/Clients';
+import { Services } from './components/Services';
 
 import './styles/style.scss'
 
@@ -18,6 +19,7 @@ function App() {
       <Approach />
       <div className="divider divider_large"></div>
       <Clients/>
+      <Services/>
       <Footer/>
     </div>
   );

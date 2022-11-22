@@ -6,8 +6,6 @@ import ReactPlayer from "react-player";
 import { ProgressBar } from '../ProgressBar';
 import { Modal } from '../Modal';
 
-import tabImage from '../../resources/images/2.jpg';
-import videoThumbnail from '../../resources/images/3.jpg';
 
 import './Approach.scss'
 

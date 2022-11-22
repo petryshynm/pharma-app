@@ -1,6 +1,9 @@
 import './Clients.scss';
 
 import backgroundImage from '../../resources/images/bg6.jpg';
+import arrow from '../../resources/images/arrow.png';
+
+import { clientCards } from '../../utils';
 
 export const Clients = () => {
     return <section className="clients" style={{ backgroundImage: `url(${backgroundImage})` }} id="clients_link">
@@ -15,39 +18,15 @@ export const Clients = () => {
                 </div>                   
             </div>
             <div className='clients__cards'>
-                <div className='clients__card card'>
-                    <div className='card__icon'>
-                        O
-                    </div>
-                    <div className='card__content'>
-                        <span></span>
-                        Academic Pharmaceutical companies
-                    </div>
-                </div>
-                <div className='clients__card card'>
-                    <div className='card__icon'>
-                        O
-                    </div>
-                    <div className='card__content'>
-                        Academic Pharmaceutical companies
-                    </div>
-                </div>
-                <div className='clients__card card'>
-                    <div className='card__icon'>
-                        O
-                    </div>
-                    <div className='card__content'>
-                        Academic Pharmaceutical companies
-                    </div>
-                </div>
-                <div className='clients__card card'>
-                    <div className='card__icon'>
-                        O
-                    </div>
-                    <div className='card__content'>
-                        Academic Pharmaceutical companies
-                    </div>
-                </div>
+                    {clientCards.map(({icon, label}, index) => (
+                        <div key={index} className='clients__card card'>
+                            <div className='card__icon'>
+                                <img src={icon} alt="card"/>
+                                {index !== clientCards.length -1 && <img className='card__arrow' src={arrow} alt="arrow"/>}
+                            </div>
+                            <div data-number={`0${index}`} className='card__content'>{label}</div>
+                        </div>
+                    ))}
             </div>
             
         </div>
