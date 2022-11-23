@@ -9,7 +9,6 @@ import backgroundImage from '../../resources/images/bg4.jpg';
 
 export const Home = () => {
     const { t } = useTranslation();
-    console.log(i18n.language)
     return  <section id="home_link" style={{ backgroundImage: `url(${backgroundImage})` }} className="home">
         <div className="home__content">
           <div className="home__title">

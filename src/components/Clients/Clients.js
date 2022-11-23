@@ -1,5 +1,7 @@
 import './Clients.scss';
 
+
+
 import backgroundImage from '../../resources/images/bg6.jpg';
 import arrow from '../../resources/images/arrow.png';
 
@@ -21,8 +23,8 @@ export const Clients = () => {
                     {clientCards.map(({icon, label}, index) => (
                         <div key={index} className='clients__card card'>
                             <div className='card__icon'>
-                                <img src={icon} alt="card"/>
-                                {index !== clientCards.length -1 && <img className='card__arrow' src={arrow} alt="arrow"/>}
+                                {icon}
+                                {index !== clientCards.length -1 && <img src={arrow} alt="arrow"/>}
                             </div>
                             <div data-number={`0${index}`} className='card__content'>{label}</div>
                         </div>

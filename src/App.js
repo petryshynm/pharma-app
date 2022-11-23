@@ -18,8 +18,10 @@ function App() {
       <div className="divider"></div>
       <Approach />
       <div className="divider divider_large"></div>
-      <Clients/>
-      <Services/>
+      <Clients />
+      <div className="divider divider_large"></div>
+      <Services />
+      <div className="divider"></div>
       <Footer/>
     </div>
   );
