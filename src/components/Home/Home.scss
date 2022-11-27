@@ -4,11 +4,11 @@
     height: 100vh;
     position: relative;
     color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__content{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -68,4 +68,17 @@
         opacity: 0.7;
         background: linear-gradient(to bottom right, $jacksons-purple , $dodger-blue);
     }
+
+    @media screen and (max-width: 767px) {
+        &__title {
+            font-size: 14px;
+            div {
+                font-size: 25px;
+            }
+        }
+        &__subtitle{
+            font-size: 16px;
+        }
+    }
+
 }

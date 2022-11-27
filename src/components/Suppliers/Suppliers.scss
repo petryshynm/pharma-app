@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+.suppliers {
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: $white;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 0;
+    &::before {
+        content: "";
+        display: block;
+        top: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0.5;
+        z-index: 3;
+        background: linear-gradient(to bottom right, $jacksons-purple, $dodger-blue);
+    }
+    &::after{
+        content: "";
+        z-index: 2;
+        display: block;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        position: absolute;
+        background: rgba(0,0,0,0.4);
+    }
+    &__title {
+        margin-bottom: 10px;
+        font-size: 50px;
+        font-weight: 600;
+    }
+    &__subtitle {
+        font-weight: 400;
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .container {
+        z-index: 6;
+    }
+    @media screen and (max-width: 767px) {
+        &__title {
+            font-size: 25px;
+        }
+        &__subtitle {
+            font-size: 20px;
+        }
+        .container {
+            padding: 0 20px;
+        }
+    }
+}

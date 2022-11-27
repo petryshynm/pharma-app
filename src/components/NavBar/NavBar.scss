@@ -1,8 +1,10 @@
 @import '../../styles/variables.scss';
 
 .navbar{
-    display: flex; 
-    >a{
+    &__links {
+        display: flex; 
+    }
+    a{
         color: $white;
         display: block;
         margin-left: 15px;
@@ -13,6 +15,62 @@
         }
         &.active{
             color: $jacksons-purple;
+        }
+    }
+    button {
+        position: fixed;
+        top: 55px;
+        right: 25px;
+        z-index: 10;
+        height: 30px;
+        width: 30px;
+        flex-direction: column;
+        justify-content: space-between;
+        display: flex;
+        padding: 6px;
+        background-color: $black;
+        border-radius: 3px;
+        border: 1px solid $white;
+        span {
+            height: 3px;
+            width: 100%;
+            background-color: white;
+            border-radius: 2px;
+        }
+    }
+    &_opened button {
+        background-color: $jacksons-purple;
+    }
+    &_opened &__links {
+        right: 0;
+    }
+    @media screen and (max-width: 767px) {
+        &__links {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            background-color: rgba(0,0,0,0.9);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.8s ease;
+            a {
+                padding: 25px;
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid $white;
+                &:last-child {
+                    border: none;
+                }
+                &:hover{
+                    color: $dodger-blue;
+                }
+                &.active{
+                    color: $dodger-blue;
+                }
+            }
         }
     }
 }

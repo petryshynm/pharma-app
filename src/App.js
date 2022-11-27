@@ -3,8 +3,10 @@ import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Approach } from './components/Approach';
-import { Clients } from './components/Clients';
+// import { Clients } from './components/Clients';
 import { Services } from './components/Services';
+import { Suppliers } from './components/Suppliers';
+import { Contacts } from './components/Contacts';
 
 import './styles/style.scss'
 
@@ -18,10 +20,10 @@ function App() {
       <div className="divider"></div>
       <Approach />
       <div className="divider divider_large"></div>
-      <Clients />
-      <div className="divider divider_large"></div>
       <Services />
       <div className="divider"></div>
+      <Suppliers />
+      <Contacts />
       <Footer/>
     </div>
   );

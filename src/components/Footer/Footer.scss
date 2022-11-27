@@ -1,14 +1,49 @@
 @import '../../styles/variables.scss';
 
-footer{
-    position: relative;
-    bottom: 0;
-    height: 400px;
+.footer{
+    background-color: $night-gray;
+    color: $dusty-gray;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.8;
     width: 100%;
-    background-color: $dodger-blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    color: white;
+    padding: 80px 0;
+    position: relative;
+    img {
+        margin:  0 auto 35px auto;
+        width: 350px;
+        display: block;
+    }
+    .container {
+        text-align: center;
+    }
+    &__upper-border {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 5;
+        &::before, &::after{
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 50px solid $white;
+        }
+        &::before{
+            border-right: 50vw solid transparent;
+        }
+        &::after{
+            right: 0;
+            border-left: 50vw solid transparent;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        img {
+            width: 250px;
+        }
+    }
 }

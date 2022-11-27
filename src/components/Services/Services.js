@@ -1,25 +1,29 @@
-import './Services.scss';
+import { useTranslation } from 'react-i18next';
 
 import { servicesCards } from '../../utils';
 
+import './Services.scss';
+
 export const Services = () => {
+    const { t } = useTranslation()
+
     return <section className="services" id="services_link">
         <div className='services__upper-border'></div>
         <div className='container'>
             <div className='services__title'>
-                We offer <span>Our Services</span>
+                {t('services_title')}<span>{t('services_title-bold')}</span>
             </div>
             <div className='services__content-wrapper'>
                 <div className='services__image'>
                     <img src='./assets/1.jpg' alt="service"/>
                 </div>
                 <div className='services__content'>
-                    <p>Our client base consists of a diverse array of pharmaceutical companies, as well as academic, contract pharma, private-label and government organizations from around the world, including:</p>
+                    <p>{t('services_subtitle')}</p>
                     <div className='services__cards'>
                         {servicesCards.map(({label, icon}, index) => (
                             <div key={index} className='services__card'>
                                 {icon}
-                                {label}
+                                {t(`services_${label}`)}
                             </div>
                         ))}
                     </div>

@@ -1,0 +1,64 @@
+@import '../../styles/variables.scss';
+
+.form {
+    input, textarea{
+        font-family: 'Rubik', sans-serif;
+        width: 100%;
+        background-color: $alabaster;
+        border: none;
+        outline: none;
+        padding: 10px;
+        &::placeholder{
+            color: $dark-silver;
+        }
+    }
+    textarea{ 
+        min-height: 160px;
+        resize: vertical;
+    }
+    &__title {
+        font-family: 'Rubik', sans-serif;
+        font-size: 35px;
+        color: $black;
+        font-weight: 500;
+    }
+    &__paragraph{
+        font-family: 'Raleway', sans-serif;
+        font-size: 15px;
+        color: $dusty-gray;
+        font-weight: 400;
+    }
+    .input-container {
+        display: flex;
+        justify-content: space-between;
+        .input-wrapper {
+            width: 49%;
+        }
+    }
+    .input-wrapper{
+        margin-bottom: 18px;
+        width: 100%;
+        position: relative;
+        .error {
+            position: absolute;
+            bottom: -13px;
+            left: 10px;
+            font-size: 11px;
+            color: red;
+        }
+    }
+    button {
+        margin: 0 auto;
+    }
+
+
+
+    @media screen and (max-width: 767px) {
+        .input-container {
+            flex-direction: column;
+            .input-wrapper {
+                width: 100%;
+            }
+        }
+    }
+}

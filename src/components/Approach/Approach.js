@@ -2,21 +2,15 @@ import React, { useState } from 'react'
 
 import classnames from 'classnames'
 import ReactPlayer from "react-player";
+import { useTranslation } from 'react-i18next';
 
 import { ProgressBar } from '../ProgressBar';
 import { Modal } from '../Modal';
 
-
 import './Approach.scss'
 
-const approachTabs = [
-    'Our Approach',
-    'Services'
-]
-
-
-
 export const Approach = () => {
+    const { t } = useTranslation()
     const [tabIndex, setTabIndex] = useState(0)
     const [isOpen, setOpenModal] = useState(false)
     
@@ -24,18 +18,18 @@ export const Approach = () => {
         switch (tabIndex) {
             case 0:
                 return <>
-                    <div className="approach__title">Our Approach</div>
-                    <div className="approach__subtitle">We are a dedicated team of truly passionate, professionals who understand our clients’ needs and wants.</div>
-                    <ProgressBar label="Passionate" value={90}/>
-                    <ProgressBar label="Professionals" value={75}/>
-                    <ProgressBar label="Trust" value={80}/>
+                    <div className="approach__title">{t('approach')}</div>
+                    <div className="approach__subtitle">{t('approach_subtitle')}</div>
+                    <ProgressBar label={t('passionate')} value={90}/>
+                    <ProgressBar label={t('professionals')} value={75}/>
+                    <ProgressBar label={t('trust')} value={80}/>
                 </>
             case 1:
                 return <>
-                    <div className="approach__title">Services</div>
-                    <div className="approach__subtitle">We Are A Creative Agency.</div>
+                    <div className="approach__title">{t('approach-services')}</div>
+                    <div className="approach__subtitle">{t('approach-services_title')}</div>
                     <p>
-                        <span>One of our top priorities is to provide our customers with a five-star level of service.</span> our customers with a five-star level of service.
+                        <span>{t('approach-services_subtitle-bold')}</span>{t('approach-services_subtitle')}
                     </p>
                 </>
             default:
@@ -62,7 +56,7 @@ export const Approach = () => {
         <div className="container">
             <div className="approach__navigation">
                 <div className="approach__tabs">
-                    {approachTabs.map((tab, index) => (
+                    {[t('approach'), t('approach-services')].map((tab, index) => (
                         <div
                             key={index}
                             className={classnames('tab', {

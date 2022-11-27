@@ -9,6 +9,49 @@
     color: $gallery;
     letter-spacing: .5px;
     font-family: 'Rubik', sans-serif;
+    .lang-selector {
+        cursor: pointer;
+        position: fixed;
+        box-sizing: border-box;
+        top: 0;
+        right: 100px;
+        width: 50px;
+        height: 20px;
+        display: flex;
+        flex-direction: column;
+        background-color: $jacksons-purple;
+        justify-content: space-between;
+        transition: all 0.8s ease;
+        svg {
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        &_opened {
+            height: 70px;
+            svg {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &::before {
+            content: '';
+        }
+        &::after, &::before{
+            content: '';
+            position: absolute;
+            border-top: 20px solid $jacksons-purple; 	
+            bottom: -20px;
+        }
+        &::after{
+            border-left: 40px solid transparent;
+            right: 0;
+        }
+        &::before{
+            border-right: 40px solid transparent;	
+        }
+        
+    }
     .container {
         padding: 15px 0;
         height: 135px;
@@ -25,13 +68,22 @@
         animation: slideIn 0.7s ease;
         -webkit-box-shadow: 0px 10px 40px rgb(0 0 0 / 5%);
         box-shadow: 0px 10px 40px rgb(0 0 0 / 5%);
-        .navbar > a{
+        .navbar a{
             color: $black;
             &:hover{
                 color: $dodger-blue;
             }
             &.active{
                 color: $dodger-blue;
+            }
+        }
+        .navbar_opened a{
+            color: $dodger-blue;
+            &:hover{
+                color: $white;
+            }
+            &.active{
+                color: $white;
             }
         }
     }    

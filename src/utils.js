@@ -1,8 +1,3 @@
-// import lamp from '../../resources/icons/pen.svg';
-// import lamp from '../../resources/icons/pen.svg';
-// import lamp from '../../resources/icons/pen.svg';
-// import lamp from '../../resources/icons/pen.svg';
-
 import { ReactComponent as Pen } from "./resources/icons/pen.svg";
 import { ReactComponent as Anchor } from "./resources/icons/anchor.svg";
 import { ReactComponent as PlayingCard } from "./resources/icons/playing-card.svg";
@@ -13,95 +8,123 @@ import { ReactComponent as Server } from "./resources/icons/server.svg";
 import { ReactComponent as Monitor } from "./resources/icons/monitor.svg";
 import { ReactComponent as Picture } from "./resources/icons/picture.svg";
 import { ReactComponent as Headphones } from "./resources/icons/headphones.svg";
+import { ReactComponent as MD } from "./resources/icons/md.svg";
+import { ReactComponent as UA } from "./resources/icons/ua.svg";
+import { ReactComponent as UK } from "./resources/icons/en.svg";
+import { ReactComponent as RU } from "./resources/icons/ru.svg";
+import { useEffect, useState } from 'react'
 
 export const navLinks = [
+    "home_link",
+    "about_link",
+    "approach_link",
+    "services_link",
+    "contact_link",
+]
+
+export const languages = [
     {
-        label:'Home',
-        id: "home_link"
-    }, 
+        lang: 'en',
+        Icon: UK
+    },
     {
-        label:'About',
-        id: "about_link"
-    }, 
+        lang: 'md',
+        Icon: MD
+    },
     {
-        label:'Our Approach',
-        id: "approach_link"
-    }, 
+        lang: 'ua',
+        Icon: UA
+    },
     {
-        label:'Our Clients',
-        id: "clients_link"
-    }, 
-    {
-        label:'Services',
-        id: "services_link"
-    }, 
-    {
-        label:'Contact',
-        id: "contact_link"
-    }
+        lang: 'ru',
+        Icon: RU
+    },
 ]
 
 export const aboutCards = [
     {
-        title: 'Quality Standards',
-        subtitle: 'At the heart of our approach are designed strict quality standards.',
+        label: "quality_standarts",
         icon: <Anchor className="card__icon"/>
     },
     {
-        title: 'Long-term Relationships',
-        subtitle: 'We have developed long-term relationships with suppliers and customers to develop our highly successful business.',
+        label: "relationships",
         icon: <Pen className="card__icon"/>
     },
     {
-        title: 'Clients’ needs',
-        subtitle: 'Knowing the expectations and needs of your customers is the key to your business performance.',
+        label: "clients_needs",
         icon: <PlayingCard className="card__icon"/>
     },
 ]
 
 export const clientCards = [
     {
-        label: 'Academic Pharmaceutical companies',
+        label: 'companies',
         icon: <Bulb />
     },
     {
-        label: 'Contract pharma',
+        label: 'contract',
         icon: <Note />
     },
     {
-        label: 'Private-label',
+        label: 'private-label',
         icon: <Ruler />
     },
     {
-        label: 'Government organizations',
+        label: 'organizations',
         icon: <Server />
     }
 ]
 
 export const servicesCards = [
     {
-        label: 'Specialty Pharma Companies',
+        label: 'specialty',
         icon: <Monitor />
     },
     {
-        label: 'R&D & Formulation Companies',
+        label: 'formulation',
         icon: <Picture />
     },
     {
-        label: 'Chemical Catalog Companies',
+        label: 'chemical',
         icon: <Headphones />
     },
-    {
-        label: 'Specialty Pharma Companies',
-        icon: <Monitor />
-    },
-    {
-        label: 'Chemical Catalog Companies',
-        icon: <Picture />
-    },
-    {
-        label: 'Specialty Pharma Companies',
-        icon: <Headphones />
-    }
 ]
 
+
+
+export const useMediaQuery = (query) => {
+  const getMatches = (query)  => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia(query).matches
+    }
+    return false
+  }
+
+  const [matches, setMatches] = useState(getMatches(query))
+
+  const handleChange = () => {
+    setMatches(getMatches(query))
+  }
+
+  useEffect(() => {
+    const matchMedia = window.matchMedia(query)
+
+    handleChange()
+
+    if (matchMedia.addListener) {
+      matchMedia.addListener(handleChange)
+    } else {
+      matchMedia.addEventListener('change', handleChange)
+    }
+
+    return () => {
+      if (matchMedia.removeListener) {
+        matchMedia.removeListener(handleChange)
+      } else {
+        matchMedia.removeEventListener('change', handleChange)
+      }
+    }
+  }, [query])
+
+  return matches
+}
