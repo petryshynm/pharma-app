@@ -1,18 +1,15 @@
 import React, { useState } from 'react'
 
 import classnames from 'classnames'
-import ReactPlayer from "react-player";
 import { useTranslation } from 'react-i18next';
 
 import { ProgressBar } from '../ProgressBar';
-import { Modal } from '../Modal';
 
 import './Approach.scss'
 
 export const Approach = () => {
     const { t } = useTranslation()
     const [tabIndex, setTabIndex] = useState(0)
-    const [isOpen, setOpenModal] = useState(false)
     
     const renderApproachText = () => {
         switch (tabIndex) {
@@ -42,10 +39,7 @@ export const Approach = () => {
             case 0:
                 return <img src='./assets/2.jpg' alt="Our Approach"/>
             case 1:
-                return <>
-                    <img src='./assets/3.jpg' alt="Services"/>
-                    <button onClick={() => setOpenModal(true)}/>
-                </>
+                return <img src='./assets/3.jpg' alt="Services"/>
             default:
                 break;
         }
@@ -71,12 +65,5 @@ export const Approach = () => {
             </div>
             <div className="approach__media">{renderApproachMedia(tabIndex)} </div>
         </div>
-        <Modal isOpen={isOpen} handleClose={() => setOpenModal(false)}>
-            <ReactPlayer
-                url="https://vimeo.com/291715535"
-                width="100%"
-                height="calc(100vh - 100px)"
-            />
-        </Modal>
     </section>
 }

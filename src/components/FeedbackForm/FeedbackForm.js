@@ -13,11 +13,14 @@ import './FeedbackForm.scss'
 export const FeedbackForm = ({classNames}) => {
     const { t } = useTranslation()
     const [isSent, setIsSent] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const sendEmail = (values) => {
+        setLoading(true)
         emailjs.send('service_p21i5ff', 'template_7c75waa', values, 'JILRHyulaSGrzEJVx')
             .then((result) => {
                 setIsSent(true)
+                setLoading(false)
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
@@ -57,22 +60,22 @@ export const FeedbackForm = ({classNames}) => {
             <div className='input-container'>
                 <div className="input-wrapper">
                     <Field name="name" type="text" placeholder={t('name')}/>
-                    <ErrorMessage className="error" name="name" component="div"/>
+                    <ErrorMessage className="error" name="user_name" component="div"/>
                 </div>
                 <div className="input-wrapper">
                     <Field name="email" type="email" placeholder={t('email')}/>
-                    <ErrorMessage className="error" name="email" component="div"/>
+                    <ErrorMessage className="error" name="user_email" component="div"/>
                 </div>
             </div>
             <div className="input-wrapper">
                 <Field type="phone" name="phone" placeholder={t('phone')}/>
-                <ErrorMessage className="error" name="phone" component="div"/>
+                <ErrorMessage className="error" name="user_phone" component="div"/>
             </div>
             <div className="input-wrapper">
                 <Field type="text" name="message" as="textarea" placeholder={t('message')}/>
                 <ErrorMessage className="error" name="message" component="div"/>
             </div>
-            <Button form="form" type="submit" value={t('send_message')} isInverted/>
+            <Button isDisabled={loading }form="form" type="submit" value={t('send_message')} isInverted/>
         </Form>
     </Formik> 
 }

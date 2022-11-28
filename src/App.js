@@ -16,9 +16,9 @@ function App() {
     <div className="App">
       <Header />
       <Home />
-      <About />
-      <div className="divider"></div>
       <Approach />
+      <div className="divider"></div>
+      <About />
       <div className="divider divider_large"></div>
       <Services />
       <div className="divider"></div>

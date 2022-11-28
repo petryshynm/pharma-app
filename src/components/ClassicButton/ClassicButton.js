@@ -2,8 +2,9 @@ import classnames from 'classnames';
 
 import './ClassicButton.scss'
 
-export const Button = ({ form, handleClick, value, className, isInverted, type = 'button' }) => (
+export const Button = ({ form, isDisabled, handleClick, value, className, isInverted, type = 'button' }) => (
     <button 
+        disabled={isDisabled}
         form={form} 
         type={type} 
         onClick={handleClick} 

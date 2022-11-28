@@ -20,16 +20,19 @@ const resources = {
   },
 };
 
+!localStorage.getItem('lang') && localStorage.setItem('lang', 'en')
+const lang = localStorage.getItem('lang') 
+
 i18n
   .use(initReactI18next) 
   .init({
     resources,
-    lng: "en", 
+    lng: lang, 
     interpolation: {
       escapeValue: false, 
     },
   });
 
-i18n.changeLanguage("en");
+i18n.changeLanguage(lang);
 
 export default i18n;

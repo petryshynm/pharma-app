@@ -21,7 +21,10 @@ export const Header = () => {
 
     return <header className={classnames('header', { 'header_fixed': isFixed })}>
         <div onClick={() => setIsLangOpened(!isLangOpened)} className={classnames('lang-selector', {'lang-selector_opened': isLangOpened})}>
-            {languages.map(({lang, Icon}, index) => <Icon key={index} onClick={() => i18n.changeLanguage(lang)}/>)}
+            {languages.map(({lang, Icon}, index) => <Icon key={index} onClick={() => {
+                i18n.changeLanguage(lang)
+                localStorage.setItem('lang', lang)
+            }}/>)}
         </div>
         <div className="container">
             <img src={`./assets/${isFixed ? 'logo-dark.png' : 'logo.png'}`} alt="logo" className="logo header__logo" />
