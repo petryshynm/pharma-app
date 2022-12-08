@@ -39,6 +39,9 @@
         background-color: $dusty-gray;
         border-color: $dark-gray;
         color: $dark-gray;
+        &:hover {
+            color: $dark-gray;
+        }
     }
     &_inverted{
         color: $white;

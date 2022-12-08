@@ -37,9 +37,9 @@ export const Approach = () => {
     const renderApproachMedia = () => {
         switch (tabIndex) {
             case 0:
-                return <img src='./assets/2.jpg' alt="Our Approach"/>
+                return <img src='./assets/2.webp' alt="Our Approach"/>
             case 1:
-                return <img src='./assets/3.jpg' alt="Services"/>
+                return <img src='./assets/3.jpeg' alt="Services"/>
             default:
                 break;
         }

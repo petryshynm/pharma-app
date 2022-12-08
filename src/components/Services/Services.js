@@ -15,7 +15,7 @@ export const Services = () => {
             </div>
             <div className='services__content-wrapper'>
                 <div className='services__image'>
-                    <img src='./assets/1.jpg' alt="service"/>
+                    <img src='./assets/1.webp' alt="service"/>
                 </div>
                 <div className='services__content'>
                     <p>{t('services_subtitle')}</p>

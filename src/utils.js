@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+
 import { ReactComponent as Pen } from "./resources/icons/pen.svg";
 import { ReactComponent as Anchor } from "./resources/icons/anchor.svg";
 import { ReactComponent as PlayingCard } from "./resources/icons/playing-card.svg";
@@ -12,7 +14,6 @@ import { ReactComponent as MD } from "./resources/icons/md.svg";
 import { ReactComponent as UA } from "./resources/icons/ua.svg";
 import { ReactComponent as UK } from "./resources/icons/en.svg";
 import { ReactComponent as RU } from "./resources/icons/ru.svg";
-import { useEffect, useState } from 'react'
 
 export const navLinks = [
     "home_link",
@@ -23,71 +24,71 @@ export const navLinks = [
 ]
 
 export const languages = [
-    {
-        lang: 'en',
-        Icon: UK
-    },
-    {
-        lang: 'md',
-        Icon: MD
-    },
-    {
-        lang: 'ua',
-        Icon: UA
-    },
-    {
-        lang: 'ru',
-        Icon: RU
-    },
+  {
+      lang: 'en',
+      Icon: UK
+  },
+  {
+      lang: 'md',
+      Icon: MD
+  },
+  {
+      lang: 'ua',
+      Icon: UA
+  },
+  {
+      lang: 'ru',
+      Icon: RU
+  },
 ]
 
 export const aboutCards = [
-    {
-        label: "quality_standarts",
-        icon: <Anchor className="card__icon"/>
-    },
-    {
-        label: "relationships",
-        icon: <Pen className="card__icon"/>
-    },
-    {
-        label: "clients_needs",
-        icon: <PlayingCard className="card__icon"/>
-    },
+  {
+      label: "quality_standarts",
+      icon: <Anchor className="card__icon"/>
+  },
+  {
+      label: "relationships",
+      icon: <Pen className="card__icon"/>
+  },
+  {
+      label: "clients_needs",
+      icon: <PlayingCard className="card__icon"/>
+  },
 ]
 
 export const clientCards = [
-    {
-        label: 'companies',
-        icon: <Bulb />
-    },
-    {
-        label: 'contract',
-        icon: <Note />
-    },
-    {
-        label: 'private-label',
-        icon: <Ruler />
-    },
-    {
-        label: 'organizations',
-        icon: <Server />
-    }
+  {
+      label: 'companies',
+      icon: <Bulb />
+  },
+  {
+      label: 'contract',
+      icon: <Note />
+  },
+  {
+      label: 'private-label',
+      icon: <Ruler />
+  },
+  {
+      label: 'organizations',
+      icon: <Server />
+  }
 ]
 
 export const servicesCards = [
-    {
-        label: 'specialty',
-        icon: <Monitor />
-    },
-    {
-        label: 'formulation',
-        icon: <Picture />
-    },
-    {
-        label: 'chemical',
-        icon: <Headphones />
-    },
+  {
+      label: 'specialty',
+      icon: <Monitor />
+  },
+  {
+      label: 'formulation',
+      icon: <Picture />
+  },
+  {
+      label: 'chemical',
+      icon: <Headphones />
+  },
 ]
 
 

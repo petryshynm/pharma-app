@@ -4,7 +4,7 @@ import { Button } from '../ClassicButton';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useTranslation } from 'react-i18next';
 
-import backgroundImage from '../../resources/images/bg4.jpg';
+import backgroundImage from '../../resources/images/animals.png';
 
 export const Home = () => {
     const { t } = useTranslation();

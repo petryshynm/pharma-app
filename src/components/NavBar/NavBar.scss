@@ -10,10 +10,8 @@
         margin-left: 15px;
         text-decoration: none;
         transition: all 0.8s ease;
-        &:hover{
-            color: $jacksons-purple;
-        }
-        &.active{
+        &:hover, &.active{
+            text-shadow: -1px 0 $white, 0 1px $white, 1px 0 $white, 0 -1px $white;
             color: $jacksons-purple;
         }
     }
@@ -65,10 +63,8 @@
                 &:last-child {
                     border: none;
                 }
-                &:hover{
-                    color: $dodger-blue;
-                }
-                &.active{
+                &:hover, &.active{
+                    text-shadow: none;
                     color: $dodger-blue;
                 }
             }

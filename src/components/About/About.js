@@ -1,7 +1,8 @@
-import './About.scss'
+import { useTranslation } from 'react-i18next';
 
 import { aboutCards } from '../../utils';
-import { useTranslation } from 'react-i18next';
+
+import './About.scss'
 
 export const About = () => {
     const { t } = useTranslation()

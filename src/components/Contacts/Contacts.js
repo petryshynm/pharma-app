@@ -1,13 +1,17 @@
-import './Contacts.scss'
+import { useState } from "react";
+
+import { useTranslation } from 'react-i18next';
+
 import { ReactComponent as Email } from "../../resources/icons/email.svg";
 import { ReactComponent as Address } from "../../resources/icons/address.svg";
 import { Button } from '../ClassicButton';
 import { FeedbackForm } from '../FeedbackForm';
-import { useTranslation } from 'react-i18next';
 
+import './Contacts.scss'
 
 export const Contacts = () => {
     const {t} = useTranslation()
+    const [isSending, setSending] = useState(false)
 
     return <div className="contacts" id="contact_link">
         <div className='container'>
@@ -27,7 +31,7 @@ export const Contacts = () => {
                             </div>
                             <div className='contacts__item-info' input-type="email">
                                 <div className='contacts__item-title'>{t('email')}:</div>
-                                <a href="mailto: info@vetmedpharma.net">info@vetmedpharma.net</a> | <a href="mailto: office@vetmedpharma.net">office@vetmedpharma.net</a>
+                                <a href="mailto: info@vetmedpharma.com">info@vetmedpharma.com</a>
                             </div>
                         </div>
                         <div className='contacts__item'>
@@ -41,9 +45,13 @@ export const Contacts = () => {
                         </div>
                     </div>
                 </div>
-                <FeedbackForm classNames='contacts__content-feedback' />
+                <FeedbackForm 
+                    classNames='contacts__content-feedback' 
+                    isSending={isSending} 
+                    setSending={setSending} 
+                />
             </div>
-            <Button form="form" type="submit" value={t('send_message')} isInverted/>
+            <Button isDisabled={isSending} form="form" type="submit" value={t('send_message')} isInverted/>
         </div>
     </div>
 }
