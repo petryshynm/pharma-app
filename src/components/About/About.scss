@@ -79,6 +79,9 @@
             color: $dusty-gray;
             line-height: 1.8;
             text-align: center;
+            a {
+                color: $dusty-gray;
+            }
         }
         &__icon-container {
             position: relative;

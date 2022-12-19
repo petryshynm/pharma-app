@@ -15,11 +15,14 @@ export const About = () => {
             <p className="about__subtitle">{t('about_paragraph-first')}</p>
             <p className="about__subtitle">{t('about_paragraph-second')}</p>
             <div className="about__cards">
-                {aboutCards.map(({ label, icon }, index) => (
+                {aboutCards.map(({ label, icon , link}, index) => (
                     <div key={index} className="about__card card">
                         <div className="card__icon-container">{icon}</div>
                         <div className="card__title">{t(`about_${label}_title`)}</div>
-                        <p className="card__subtitle">{t(`about_${label}_subtitle`)}</p>
+                        <p className="card__subtitle">
+                            {t(`about_${label}_subtitle`)}
+                            {link ? <a href={link.href} target="_blank" rel="noreferrer">{t(link.label)}</a> : null}
+                        </p>
                     </div>
                 ))}
             </div>

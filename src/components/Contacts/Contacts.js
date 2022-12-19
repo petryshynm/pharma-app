@@ -13,7 +13,7 @@ export const Contacts = () => {
     const {t} = useTranslation()
     const [isSending, setSending] = useState(false)
 
-    return <div className="contacts" id="contact_link">
+    return <section className="contacts" id="contact_link">
         <div className='container'>
             <div className='contacts__heading'>
                 <div className='contacts__title'>
@@ -32,6 +32,8 @@ export const Contacts = () => {
                             <div className='contacts__item-info' input-type="email">
                                 <div className='contacts__item-title'>{t('email')}:</div>
                                 <a href="mailto: info@vetmedpharma.com">info@vetmedpharma.com</a>
+                                <a href="mailto: operative@vetmedpharma.com">operative@vetmedpharma.com</a>
+                                <a href="mailto: logistic@vetmedpharma.com">logistic@vetmedpharma.com</a>
                             </div>
                         </div>
                         <div className='contacts__item'>
@@ -53,5 +55,5 @@ export const Contacts = () => {
             </div>
             <Button isDisabled={isSending} form="form" type="submit" value={t('send_message')} isInverted/>
         </div>
-    </div>
+    </section>
 }

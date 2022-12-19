@@ -15,6 +15,7 @@ export const NavBar = () => {
 
     const { t } = useTranslation()
 
+    console.log(activeLink);
     useEffect(() => {
         const activateLink = () => {
             let section = document.querySelectorAll('section');

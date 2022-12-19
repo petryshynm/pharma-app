@@ -3,7 +3,6 @@ import { Footer } from './components/Footer';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Approach } from './components/Approach';
-// import { Clients } from './components/Clients';
 import { Services } from './components/Services';
 import { Suppliers } from './components/Suppliers';
 import { Contacts } from './components/Contacts';

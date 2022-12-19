@@ -14,7 +14,7 @@
         position: fixed;
         box-sizing: border-box;
         top: 0;
-        right: 100px;
+        right: 90px;
         width: 50px;
         height: 20px;
         display: flex;
@@ -60,7 +60,7 @@
         align-items:center;
     }
     &__logo{
-        height: 85%;
+        height: 40%;
     }
     &_fixed {
         background-color: $white;

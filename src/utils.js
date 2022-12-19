@@ -16,78 +16,82 @@ import { ReactComponent as UK } from "./resources/icons/en.svg";
 import { ReactComponent as RU } from "./resources/icons/ru.svg";
 
 export const navLinks = [
-    "home_link",
-    "about_link",
-    "approach_link",
-    "services_link",
-    "contact_link",
+  "home_link",
+  "about_link",
+  "approach_link",
+  "services_link",
+  "contact_link",
 ]
 
 export const languages = [
   {
-      lang: 'en',
-      Icon: UK
+    lang: 'en',
+    Icon: UK
   },
   {
-      lang: 'md',
-      Icon: MD
+    lang: 'md',
+    Icon: MD
   },
   {
-      lang: 'ua',
-      Icon: UA
+    lang: 'ua',
+    Icon: UA
   },
   {
-      lang: 'ru',
-      Icon: RU
+    lang: 'ru',
+    Icon: RU
   },
 ]
 
 export const aboutCards = [
   {
-      label: "quality_standarts",
-      icon: <Anchor className="card__icon"/>
+    label: "quality_standarts",
+    icon: <Anchor className="card__icon"/>,
+    link: {
+      label: "about_quality_standarts_link",
+      href: "https://drive.google.com/file/d/1o-q1N9fFHo9Q53X9Yb8ogfiSpN_5emwj/view?usp=sharing"
+    }
   },
   {
-      label: "relationships",
-      icon: <Pen className="card__icon"/>
+    label: "relationships",
+    icon: <Pen className="card__icon"/>
   },
   {
-      label: "clients_needs",
-      icon: <PlayingCard className="card__icon"/>
+    label: "clients_needs",
+    icon: <PlayingCard className="card__icon"/>
   },
 ]
 
 export const clientCards = [
   {
-      label: 'companies',
-      icon: <Bulb />
+    label: 'companies',
+    icon: <Bulb />
   },
   {
-      label: 'contract',
-      icon: <Note />
+    label: 'contract',
+    icon: <Note />
   },
   {
-      label: 'private-label',
-      icon: <Ruler />
+    label: 'private-label',
+    icon: <Ruler />
   },
   {
-      label: 'organizations',
-      icon: <Server />
+    label: 'organizations',
+    icon: <Server />
   }
 ]
 
 export const servicesCards = [
   {
-      label: 'specialty',
-      icon: <Monitor />
+    label: 'specialty',
+    icon: <Monitor />
   },
   {
-      label: 'formulation',
-      icon: <Picture />
+    label: 'formulation',
+    icon: <Picture />
   },
   {
-      label: 'chemical',
-      icon: <Headphones />
+    label: 'chemical',
+    icon: <Headphones />
   },
 ]
 

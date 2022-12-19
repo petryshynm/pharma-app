@@ -9,7 +9,7 @@ import './Suppliers.scss'
 export const Suppliers = () => {
     const { t } = useTranslation()
 
-    return <div className='suppliers' style={{ backgroundImage: `url(${backgroundImage})` }}>
+    return <section className='suppliers' id="suppliers_id" style={{ backgroundImage: `url(${backgroundImage})` }}>
         <div className='container'>
             <div className='suppliers__title'>{t('suppliers_title')}</div>
             <div className='suppliers__subtitle'>{t('suppliers_subtitle')}</div>
@@ -17,5 +17,5 @@ export const Suppliers = () => {
               <Button value={t('get_started')} isInverted className="suppliers__button" />
             </AnchorLink>   
         </div>
-    </div>
+    </section>
 }
