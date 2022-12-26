@@ -32,7 +32,7 @@
     &__cards {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
     }
     &__border{
         position: absolute;
@@ -55,7 +55,7 @@
     .card{
         background-color: $white;
         position: relative;
-        z-index: 4;
+        z-index: 3;
         padding: 50px 30px;
         width: 33.33%;
         display: flex;
@@ -79,8 +79,26 @@
             color: $dusty-gray;
             line-height: 1.8;
             text-align: center;
-            a {
-                color: $dusty-gray;
+        }
+        span {
+            position: relative;
+            cursor: pointer;
+            text-decoration: underline;
+            color: $dusty-gray;
+            &::after {
+                content: 'V';
+                display: flex;
+                position: absolute;
+                right: -25px;
+                top: -5px;
+                font-size: 18px;
+                transition: all 0.3s ease;
+                rotate: 180deg;
+            }
+            &.info_opened {
+                &::after {
+                    rotate: 0deg;
+                }
             }
         }
         &__icon-container {
@@ -106,6 +124,27 @@
                 }
                 .card__icon path {
                     fill: $white;
+                }
+            }
+        }
+        &__info {
+            height: 0px;
+            margin-top: 20px;
+            overflow: hidden;
+            transition: 0.3s all ease;
+            display: flex;
+            justify-content: space-between;
+            &_opened {
+                height: fit-content;
+            }
+            img {
+                cursor: pointer;
+                padding: 3px;
+                height: fit-content;
+                width: 32%;
+                transition: all 0.3s ease;
+                &:hover {
+                    border: 1px solid black;
                 }
             }
         }

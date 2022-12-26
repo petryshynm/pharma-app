@@ -24,7 +24,6 @@ export const FeedbackForm = ({classNames, isSending, setSending}) => {
             .then((result) => {
                 setIsSent(true)
                 setSending(false)
-                console.log(result.text);
             }, (error) => {
                 console.log(error.text);
             });
