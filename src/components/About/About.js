@@ -17,7 +17,7 @@ export const About = () => {
             <p className="about__subtitle">{t('about_paragraph-second')}</p>
             <div className="about__cards">
                 {aboutCards.map((card, index) => (
-                    <AboutCard card={card} index={index}/>
+                    <AboutCard key={index} card={card} index={index}/>
                 ))}
             </div>
         </div>

@@ -24,6 +24,7 @@ export const AboutCard = ({ card: { label, icon , link }, index}) => {
             <div className={classnames('card__info', { 'card__info_opened': infoOpened})}>
                 {images.map((img, index) => (
                     <img 
+                        key={index}
                         alt={`Document #${index}`} 
                         src={img} 
                         onClick={() => {
